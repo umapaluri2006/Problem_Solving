@@ -1,0 +1,23 @@
+def remove_outer_parentheses(s):
+    # Write your code here...
+    r=[]
+    d=0
+    for c in s:
+        if c=='(':
+            if d>0:
+                r.append(c)
+            d+=1
+        else:
+            d-=1
+            if d>0:
+                r.append(c)
+    return ''.join(r)
+
+
+
+#input:                    Output
+#4                 
+#((()))                    (())  
+#(()(()))                  ()(())
+#()()
+#((())())(()(()))          (())()()(())
